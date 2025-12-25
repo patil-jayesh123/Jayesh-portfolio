@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayesh Patil | Portfolio</title>
+    <!-- bootstrap -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f8fafc;
+        color: #1f2937;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background: white;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        z-index: 100;
+      }
+
+      header h1 {
+        color: #6366f1;
+        font-weight: 700;
+      }
+
+      nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #1f2937;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: #6366f1;
+      }
+
+      section {
+        padding: 90px 10%;
+      }
+
+      /* HERO */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+        border-radius: 30px;
+        padding: 80px;
+      }
+
+      .hero-text {
+        max-width: 550px;
+      }
+
+      .hero-text h2 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+
+      .hero-text span {
+        color: #6366f1;
+      }
+
+      .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, #6366f1, #38bdf8);
+        color: white;
+        padding: 14px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      /* SECTION TITLES */
+      section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      /* SKILLS & PROJECTS */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h3 {
+        color: #6366f1;
+        margin-bottom: 10px;
+      }
+
+      /* CONTACT */
+      .contact {
+        text-align: center;
+        background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+        border-radius: 30px;
+        padding: 60px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 50px 30px;
+        }
+
+        .hero-text h2 {
+          font-size: 2.2rem;
+        }
+      }
+
+      .contact-section {
+        background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+        padding: 90px 10%;
+        border-radius: 30px;
+        text-align: center;
+      }
+
+      .contact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+        color: #475569;
+      }
+
+      .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+      }
+
+      .contact-card {
+        background: white;
+        padding: 35px 25px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #1f2937;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contact-card span {
+        font-size: 2.5rem;
+      }
+
+      .contact-card h3 {
+        margin: 15px 0 5px;
+        color: #6366f1;
+      }
+
+      .contact-card p {
+        font-size: 0.95rem;
+        color: #64748b;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid #6366f1;
+        color: #6366f1;
+      }
+
+      .btn-outline:hover {
+        background: #6366f1;
+        color: white;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      header h1 {
+        color: #6366f1;
+      }
+
+      /* Nav List */
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-list li a {
+        text-decoration: none;
+        color: #1f2937;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-list li a:hover {
+        color: #6366f1;
+      }
+
+      /* Hamburger */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .menu-toggle span {
+        height: 3px;
+        width: 25px;
+        background: #6366f1;
+        border-radius: 5px;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .nav-list {
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 100%;
+          flex-direction: column;
+          background: white;
+          border-top: 1px solid #e5e7eb;
+          display: none;
+        }
+
+        .nav-list.active {
+          display: flex;
+        }
+
+        .nav-list li {
+          margin: 15px 0;
+          text-align: center;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+      }
+
+      /* //photo css */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 80px 10%;
+        background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+        border-radius: 30px;
+      }
+
+      .hero-photo img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #6366f1;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s;
+      }
+
+      .hero-photo img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+        }
+
+        .hero-photo img {
+          width: 180px;
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Portfolio</h1>
+      <nav>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="about">
+      <div class="hero-text">
+        <h2>Hi, I'm <span>Jayesh Patil</span></h2>
+        <p style="text-align: justify">
+          Enthusiastic and detail-oriented MERN Stack Developer with hands-on
+          academic and project experience in developing full-stack web
+          applications using MongoDB, Express.js, React.js, and Node.js. Strong
+          understanding of RESTful APIs and responsive design.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn">Explore My Work</a>
+          <a
+            href="jayesh-resume new.pdf"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            View Resume <i class="bi bi-file-earmark-person-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Circular Photo -->
+      <div class="hero-photo">
+        <img src="image.jpeg" alt="Jayesh Patil" />
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>My Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>HTML</h3>
+          <p>Clean & semantic structure</p>
+        </div>
+        <div class="card">
+          <h3>CSS</h3>
+          <p>Modern layouts & animations</p>
+        </div>
+        <div class="card">
+          <h3>Bootstrap</h3>
+          <p>Interactive experiences</p>
+        </div>
+        <div class="card">
+          <h3>Javascript</h3>
+          <p>Perfect on all devices</p>
+        </div>
+        <div class="card">
+          <h3>React js</h3>
+          <p>Clean & semantic structure</p>
+        </div>
+        <div class="card">
+          <h3>Node js</h3>
+          <p>Clean & semantic structure</p>
+        </div>
+        <div class="card">
+          <h3>Express js</h3>
+          <p>Clean & semantic structure</p>
+        </div>
+        <div class="card">
+          <h3>Mongo DB</h3>
+          <p>Clean & semantic structure</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <a
+            href="https://ims-front-end-beta.vercel.app/"
+            target="_blank"
+            style="text-decoration: none"
+            ><h3>Institute management</h3></a
+          >
+          <p>Personal responsive portfolio design</p>
+        </div>
+        <div class="card">
+          <a
+            href="https://notebook-front-end.vercel.app/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <h3>NoteBook management</h3></a
+          >
+          <p>Modern UI landing page</p>
+        </div>
+        <div class="card">
+          <a
+            href="https://hospital-management-gqnm.onrender.com/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <h3>Hospital management</h3></a
+          >
+          <p>Interactive web application</p>
+        </div>
+        <div class="card">
+          <a
+            href="https://parking-management-on-json-server.vercel.app/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <h3>Parking management</h3></a
+          >
+          <p>Interactive web application</p>
+        </div>
+        <div class="card">
+          <a href="" target="_blank" style="text-decoration: none">
+            <h3>Portfolio website</h3></a
+          >
+          <p>Interactive web application</p>
+        </div>
+        <div class="card">
+          <a
+            href="https://front-end-project-sigma-one.vercel.app/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <h3>Responsive Ui template</h3></a
+          >
+          <p>Interactive web application</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Get In Touch</h2>
+      <p class="contact-subtitle">
+        Feel free to connect with me on these platforms
+      </p>
+
+      <div class="contact-cards">
+        <a href="mailto:jayeshpatil8262@email.com" class="contact-card">
+          <span><i class="bi bi-envelope-at-fill"></i></span>
+          <h3>Email</h3>
+          <p>jayeshpatil8262@email.com</p>
+        </a>
+
+        <a
+          href="https://linkedin.com/in/jayesh-patil-8262-jp/"
+          target="_blank"
+          class="contact-card"
+        >
+          <span><i class="bi bi-linkedin"></i></span>
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/jayesh-patil-8262-jp</p>
+        </a>
+
+        <a
+          href="https://github.com/patil-jayesh123?tab=repositories"
+          target="_blank"
+          class="contact-card"
+        >
+          <span><i class="bi bi-github"></i></span>
+          <h3>GitHub</h3>
+          <p>github.com/patil-jayesh123</p>
+        </a>
+      </div>
+    </section>
+
+    <footer>© 2025 jayesh patil | Full Stack Developer (MERN)❤️</footer>
+
+    <script>
+      const menuToggle = document.getElementById("mobile-menu");
+      const navList = document.querySelector(".nav-list");
+
+      menuToggle.addEventListener("click", () => {
+        navList.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
